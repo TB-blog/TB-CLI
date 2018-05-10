@@ -1,24 +1,15 @@
-<div align="center">
-  <a href="#">
-    <img width="80" src="http://ojiq40lzd.bkt.clouddn.com/logo-512.png" alt="LOGO">
-  </a>
-</div>
-<br>
-<div align="center">
-  <a href="https://vuejs.org">
-    <img src="http://forthebadge.com/images/badges/made-with-vue.svg">
-  </a>
-  <a href="https://t66y.com">
-    <img src="http://forthebadge.com/images/badges/ages-18.svg">
-  </a>
-  <a href="http://ojiq40lzd.bkt.clouddn.com/love-qr.png">
-    <img src="http://forthebadge.com/images/badges/built-with-love.svg">
-  </a>
-</div>
+# TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)
 
-# TB-CLI
+A simple CLI for scaffolding TB.
 
-CLI tool for TB blog platform
+## Prerequisites
+
+* Operating System: Linux, OS X or Windows.
+* Node.js Runtime: 8.x or newer; it is recommended that you use [LTS Releases](https://nodejs.org).
+
+## Language
+
+[中文](README.zh-CN.md)
 
 ## Links
 
@@ -58,10 +49,12 @@ tb run
 ```
 Then open your browser and visit http://127.0.0.1:2333.
 
-## Config
+## Config details
+
 TB is based on `Github API` and `Github issues`. Before you starting, please [create a new respository](https://github.com/new) and add some issues for your blog articles, default respository name is `blog`, of course you can set your own.
 
 If you only have empty respository and don't have issues yet, after generating TB, you will have an entry to create issues.
+
 ### Token
 
 The first step is to generate your [token](https://github.com/settings/tokens/new), token is for Github API request validation, and please check following options:
@@ -76,15 +69,17 @@ The first step is to generate your [token](https://github.com/settings/tokens/ne
 
 And add the token description and click `Generate token` to get your token.
 
-### Comments
-TB's comments component is using [gitalk](https://github.com/gitalk/gitalk). More config details please see [here](https://github.com/gitalk/gitalk).
+### Comments module
+
+TB's comments module is using [gitalk](https://github.com/gitalk/gitalk). More config details please see [here](https://github.com/gitalk/gitalk).
 
 **Attention:** *if you don't need comment function, please choose `Use comment component? No`.*
 
 ## Deploying
+
 If you are already connected to your server, you can build & run TB in your server simply, but before deploying please make sure you already have [node](https://nodejs.org/), [git](https://git-scm.com/) and [pm2](https://pm2.keymetrics.io/):
 
-* Install [TB-CLI](https://github.com/TB-blog/TB-CLI).
+* Global install [TB-CLI](https://github.com/TB-blog/TB-CLI).
 
     ```shell
     npm install tb-cli -g
@@ -108,14 +103,16 @@ If you are already connected to your server, you can build & run TB in your serv
     ```shell
     tb deploy
 
-    // or you can set pm2 server name
+    // or you can set pm2 server name, default: TB
     tb deploy --name <the name you set>
     ```
 
 Then TB is listen to port 2333 in your server with [pm2](https://pm2.keymetrics.io/).
 
 ## Contributing
+
 Welcome to contribute by creating issues or sending pull requests. See [Contributing Guide](CONTRIBUTING.md) for guidelines.
 
 ## License
-TB-CLI is licensed under the MIT License. See the [LICENSE](LICENSE) file.
+
+[MIT](LICENSE)
