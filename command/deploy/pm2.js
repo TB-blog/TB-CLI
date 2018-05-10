@@ -20,10 +20,10 @@ module.exports = (name) => {
       shell.exit(1);
     }
 
+    const port = process.env.PORT || 2333;
     spinner.succeed('Deploy successfully.');
-
     console.log('');
-    spinner.info('Server started at 127.0.0.1:8080');
+    spinner.info(`Server started at 127.0.0.1:${port}`);
     shell.exit(0);
   });
 };
