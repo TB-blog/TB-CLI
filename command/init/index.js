@@ -1,6 +1,9 @@
 'use strict';
 
 const inquirer = require('inquirer');
+const shell = require('shelljs');
+const ora = require('ora');
+const spinner = ora();
 const questions = [
   // username
   {
@@ -133,6 +136,11 @@ const questions = [
 ];
 
 module.exports = () => {
+  if (!shell.which('git')) {
+    spinner.fail('Sorry, this script requires git.');
+    shell.exit(1);
+  }
+
   inquirer.prompt(questions)
     .then((answers) => {
       const template = `

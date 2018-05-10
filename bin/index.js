@@ -3,17 +3,31 @@
 const program = require('commander');
 
 program
+   .version('0.0.1')
+
+program
   .command('init')
   .alias('i')
-  .description('Generate TB blog platform')
+  .description('generate TB blog platform')
   .action(() => {
-    require('../command/init')();
+    require('../command/init/index')();
   })
-  .on('--help', () => {
-    console.log('  Examples:')
-    console.log('')
-    console.log('$ tb init')
-    console.log('$ tb')
+
+program
+  .command('run')
+  .alias('r')
+  .description('runing TB blog platform')
+  .action(() => {
+    require('../command/run/index')();
+  })
+
+program
+  .command('deploy')
+  .alias('d')
+  .option('-n, --name <name>', 'Change pm2 project name. Default: TB')
+  .description('build & starting TB blog platform')
+  .action((option) => {
+    require('../command/deploy/index')(option.name);
   })
 
 program.parse(process.argv)

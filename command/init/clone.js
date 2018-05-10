@@ -17,13 +17,13 @@ module.exports = (template) => {
     async: true
   }, (code, stdout, stderr) => {
     if (code !== 0) {
-      spinner.fail('There is an error while cloning the project');
+      spinner.fail('There are some errors while cloning the project.');
       console.log('');
       console.log(stderr);
       shell.exit(1);
     }
 
-    spinner.succeed('Clone successfully');
+    spinner.succeed('Clone successfully.');
     require('./cd')(template, shell);
   });
 };

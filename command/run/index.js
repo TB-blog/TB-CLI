@@ -1,9 +1,10 @@
 'use strict';
 
+const shell = require('shelljs');
 const ora = require('ora');
 const spinner = ora();
 
-module.exports = (shell) => {
+module.exports = () => {
   const cmd = 'yarn run dev';
 
   shell.exec(cmd, {
@@ -11,7 +12,7 @@ module.exports = (shell) => {
     async: true
   }, (code, stdout, stderr) => {
     if (code !== 0) {
-      spinner.fail('There is an error while starting TB');
+      spinner.fail('There are some errors while starting TB.');
       console.log('');
       console.log(stderr);
       shell.exit(1);

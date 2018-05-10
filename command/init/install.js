@@ -4,6 +4,11 @@ const ora = require('ora');
 const spinner = ora();
 
 module.exports = (shell) => {
+  if (!shell.test('-f', 'config.ts')) {
+    spinner.fail('There is an error while writing the config file.');
+    shell.exit(1);
+  }
+
   spinner.color = 'green';
   spinner.text = 'Installing dependences...';
   spinner.start();
@@ -15,13 +20,16 @@ module.exports = (shell) => {
     async: true
   }, (code, stdout, stderr) => {
     if (code !== 0) {
-      spinner.fail('There is an error while installing dependences');
+      spinner.fail('There are some errors while installing dependences.');
       console.log('');
       console.log(stderr);
       shell.exit(1);
     }
 
-    spinner.succeed('Install dependences successfully');
-    require('./run')(shell);
+    spinner.succeed('Install dependences successfully.');
+    console.log('');
+    spinner.info('1. cd TB/');
+    spinner.info('2. tb run');
+    shell.exit(0);
   });
 };

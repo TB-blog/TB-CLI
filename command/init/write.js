@@ -13,12 +13,12 @@ module.exports = (template, shell) => {
     flags: 'w'
   }, (err) => {
     if (err) {
-      spinner.fail('There is an error while writing the config.ts');
+      spinner.fail('There are some errors while writing the config file.');
       console.log('');
       console.log(err);
       shell.exit(1);
     }
-    spinner.succeed('Write config.ts successfully');
+    spinner.succeed('Write config file successfully.');
   });
 
   require('./install')(shell);
