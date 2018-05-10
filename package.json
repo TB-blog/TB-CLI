@@ -1,6 +1,6 @@
 {
   "name": "tb-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A easy & simple cli for TB blog platform",
   "main": "index.js",
   "scripts": {

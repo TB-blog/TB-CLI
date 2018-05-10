@@ -142,11 +142,6 @@ module.exports = () => {
           user: '${answers.user}',
           repo: '${answers.repo}',
           motto: '${answers.motto}',
-          link: {
-            Github: 'https://github.com/HuangXiZhou',
-            Linkedin: 'https://www.linkedin.com/in/huangxizhou',
-            Steam: 'https://steamcommunity.com/profiles/76561198360491627'
-          },
           gitalk: {
             useGitalk: ${answers.useGitalk},
             clientID: '${answers.gitalk_clientID}',
