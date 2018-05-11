@@ -1,5 +1,5 @@
 # TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)
-
+[![NPM](https://nodei.co/npm/tb-cli.png?downloads=true&stars=true)](https://nodei.co/npm/tb-cli)
 A simple CLI for scaffolding TB.
 
 ## Prerequisites

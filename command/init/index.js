@@ -44,14 +44,6 @@ const questions = [
     }
   },
 
-  // motto
-  {
-    type: 'input',
-    name: 'motto',
-    message: 'Motto:',
-    default: 'A man who loves the world.'
-  },
-
   // useGitalk
   {
     type: 'confirm',
@@ -149,7 +141,6 @@ module.exports = () => {
           "nickname": "${answers.nickname}",
           "user": "${answers.user}",
           "repo": "${answers.repo}",
-          "motto": "${answers.motto}",
           "gitalk": {
             "useGitalk": ${answers.useGitalk},
             "clientID": "${answers.gitalk_clientID}",
