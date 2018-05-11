@@ -6,10 +6,10 @@ const fs = require('fs');
 
 module.exports = (template, shell) => {
   spinner.color = 'green';
-  spinner.text = 'Writing config.ts...';
+  spinner.text = 'Writing config.json...';
   spinner.start();
 
-  fs.writeFile('config.ts', template, {
+  fs.writeFile('config.json', template, {
     flags: 'w'
   }, (err) => {
     if (err) {

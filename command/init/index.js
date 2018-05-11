@@ -144,21 +144,21 @@ module.exports = () => {
   inquirer.prompt(questions)
     .then((answers) => {
       const template = `
-        export default {
-          token: '${answers.token}',
-          nickname: '${answers.nickname}',
-          user: '${answers.user}',
-          repo: '${answers.repo}',
-          motto: '${answers.motto}',
-          gitalk: {
-            useGitalk: ${answers.useGitalk},
-            clientID: '${answers.gitalk_clientID}',
-            clientSecret: '${answers.gitalk_clientSecret}',
-            repo: '${answers.gitalk_repo}',
-            owner: '${answers.gitalk_owner}',
-            admin: ['${answers.gitalk_admin}']
+        {
+          "token": "${answers.token}",
+          "nickname": "${answers.nickname}",
+          "user": "${answers.user}",
+          "repo": "${answers.repo}",
+          "motto": "${answers.motto}",
+          "gitalk": {
+            "useGitalk": ${answers.useGitalk},
+            "clientID": "${answers.gitalk_clientID}",
+            "clientSecret": "${answers.gitalk_clientSecret}",
+            "repo": "${answers.gitalk_repo}",
+            "owner": "${answers.gitalk_owner}",
+            "admin": ["${answers.gitalk_admin}"]
           }
-        };
+        }
       `;
       return template;
     })

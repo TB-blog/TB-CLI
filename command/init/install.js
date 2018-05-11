@@ -4,7 +4,7 @@ const ora = require('ora');
 const spinner = ora();
 
 module.exports = (shell) => {
-  if (!shell.test('-f', 'config.ts')) {
+  if (!shell.test('-f', 'config.json')) {
     spinner.fail('There is an error while writing the config file.');
     shell.exit(1);
   }
