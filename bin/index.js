@@ -3,7 +3,7 @@
 const program = require('commander');
 
 program
-   .version('0.0.5')
+   .version('0.0.7')
 
 program
   .command('init')

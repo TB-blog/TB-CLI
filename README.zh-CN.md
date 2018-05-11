@@ -1,5 +1,6 @@
 # TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)
 [![NPM](https://nodei.co/npm/tb-cli.png?downloads=true&stars=true)](https://nodei.co/npm/tb-cli)
+
 为 TB 提供的简单脚手架
 
 ## 环境准备
