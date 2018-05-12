@@ -52,13 +52,13 @@ Then open your browser and visit http://127.0.0.1:2333.
 
 ## Config details
 
-TB is based on `Github API` and `Github issues`. Before you starting, please [create a new respository](https://github.com/new) and add some issues for your blog articles, default respository name is `blog`, of course you can set your own.
+TB is based on `Github API` and `Github issues`. Before your starting, please [create a new respository](https://github.com/new) and add some issues for your blog articles, default respository name is `blog`, of course you can set your own.
 
 If you only have empty respository and don't have issues yet, after generating TB, you will have an entry to create issues.
 
 ### Token
 
-The first step is to generate your [token](https://github.com/settings/tokens/new), token is for Github API request validation, and please check following options:
+The first step is to generate your [token](https://github.com/settings/tokens/new), which is for Github API request validation, and please check following options:
 
 * [x] repo
     * [x] repo:status
@@ -108,7 +108,7 @@ If you are already connected to your server, you can build & run TB in your serv
     tb deploy --name <the name you set>
     ```
 
-Then TB is listen to port 2333 in your server with [pm2](https://pm2.keymetrics.io/).
+Then TB is listen to port `2333` in your server with [pm2](https://pm2.keymetrics.io/).
 
 ## Contributing
 

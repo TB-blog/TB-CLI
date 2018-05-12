@@ -1,7 +1,7 @@
 # TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)
 [![NPM](https://nodei.co/npm/tb-cli.png?downloads=true&stars=true)](https://nodei.co/npm/tb-cli)
 
-为 TB 提供的简单脚手架
+专为 TB 提供的脚手架
 
 ## 环境准备
 
@@ -109,7 +109,7 @@ TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多�
     tb deploy --name <你设定的名称>
     ```
 
-TB 将会监听在 2333 端口，配合 [pm2](https://pm2.keymetrics.io/) 持续运行。
+TB 将会监听在 `2333` 端口，配合 [pm2](https://pm2.keymetrics.io/) 持续稳定运行。
 
 ## 贡献
 
