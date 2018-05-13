@@ -4,8 +4,8 @@
   "description": "A simple CLI for scaffolding TB.",
   "bin": {
     "tb": "bin/tb.js",
-    "tb-init": "bin/tb-init",
-    "tb-theme": "bin/tb-theme"
+    "tb-init": "bin/tb-init.js",
+    "tb-theme": "bin/tb-theme.js"
   },
   "repository": {
     "type": "git",
