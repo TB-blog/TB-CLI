@@ -23,7 +23,9 @@ request({
     'User-Agent': 'tb-cli'
   }
 }, (err, res, body) => {
-  if (err) logger.fatal(err);
+  if (err) {
+    logger.fatal(err);
+  }
   const requestBody = JSON.parse(body);
   if (Array.isArray(requestBody)) {
     console.log('  Available official themes:');
