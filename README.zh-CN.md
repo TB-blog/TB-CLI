@@ -74,9 +74,35 @@ TB 基于 `Github API` 和 `Github issues`。在你开始之前，请 [创建一
 
 ### 评论模块
 
-TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多配置详情请点击[这里](https://github.com/gitalk/gitalk)。
-
 **注意:** *如果你不需要评论模块，请在生成时选择 `Use comments module? No`。*
+
+#### 使用
+
+需要 **GitHub Application**，如果没有 [点击这里申请](https://github.com/settings/applications/new)，`Authorization callback URL` 填写当前使用插件页面的域名。
+
+#### 设置
+
+- **clientID** `String`
+
+  **必须**. GitHub Application Client ID.
+
+- **clientSecret** `String`
+
+  **必须**. GitHub Application Client Secret.
+
+- **repo** `String`
+
+  **必须**. GitHub repository.
+
+- **owner** `String`
+
+  **必须**. GitHub repository 所有者，可以是个人或者组织。
+
+- **admin** `Array`
+
+  **必须**. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
+
+*TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多配置详情请点击[这里](https://github.com/gitalk/gitalk)。*
 
 ## 部署
 

@@ -72,9 +72,37 @@ And add the token description and click `Generate token` to get your token.
 
 ### Comments module
 
-TB's comments module is using [gitalk](https://github.com/gitalk/gitalk). More config details please see [here](https://github.com/gitalk/gitalk).
-
 **Attention:** *if you don't need comment function, please choose `Use comments module? No`.*
+
+#### Usage
+
+A **GitHub Application** is needed for authorization, if you don't have one, [Click here to register](https://github.com/settings/applications/new) a new one.
+
+**Note:** You must specify the website domain url in the `Authorization callback URL` field.
+
+#### Options
+
+- **clientID** `String`
+
+  **Required**. GitHub Application Client ID.
+
+- **clientSecret** `String`
+
+  **Required**. GitHub Application Client Secret.
+
+- **repo** `String`
+
+  **Required**. GitHub repository.
+
+- **owner** `String`
+
+  **Required**. GitHub repository owner. Can be personal user or organization.
+
+- **admin** `Array`
+
+  **Required**. GitHub repository owner and collaborators. (Users who having write access to this repository)
+
+*TB's comments module is using [gitalk](https://github.com/gitalk/gitalk). More config details please see [here](https://github.com/gitalk/gitalk).*
 
 ## Deploying
 
