@@ -28,25 +28,25 @@ npm install tb-cli -g
 ### Usage
 
 ```shell
-  Usage: tb [options] [command]
+  Usage: tb <command> [options]
 
   Options:
 
-    -V, --version       output the version number
-    -h, --help          output usage information
+    -V, --version  output the version number
+    -h, --help     output usage information
 
   Commands:
 
-    init|i              generate TB blog platform
-    run|r               runing TB blog platform
-    deploy|d [options]  build & starting TB blog platform
+    init           generate a new project from TB template
+    theme          list available official themes
+    help [cmd]     display help for [cmd]
 ```
 ## Start
 ```shell
 // config details please see following docs
-tb init
-cd TB/
-tb run
+tb init [project-name]
+cd [project-name]
+npm install // or if using yarn: yarn
 ```
 Then open your browser and visit http://127.0.0.1:2333.
 
@@ -74,11 +74,11 @@ And add the token description and click `Generate token` to get your token.
 
 TB's comments module is using [gitalk](https://github.com/gitalk/gitalk). More config details please see [here](https://github.com/gitalk/gitalk).
 
-**Attention:** *if you don't need comment function, please choose `Use comment component? No`.*
+**Attention:** *if you don't need comment function, please choose `Use comments module? No`.*
 
 ## Deploying
 
-If you are already connected to your server, you can build & run TB in your server simply, but before deploying please make sure you already have [node](https://nodejs.org/), [git](https://git-scm.com/) and [pm2](https://pm2.keymetrics.io/):
+If you are already connected to your server, you can build & run TB in your server simply, but before deploying please make sure you already have [node](https://nodejs.org/) and [git](https://git-scm.com/) :
 
 * Global install [TB-CLI](https://github.com/TB-blog/TB-CLI).
 
@@ -90,25 +90,27 @@ If you are already connected to your server, you can build & run TB in your serv
 * Generate TB like using it in your local environment:
 
     ```shell
-    tb init
+    tb init [project-name]
     ```
 
-* Go to TB folder:
+* Go to your project folder:
 
     ```shell
-    cd TB/
+    cd [project-name]
+    npm install --production // if using yarn: yarn install --production
     ```
 
-* Start deploying:
+* Start deploying(using [pm2](https://pm2.keymetrics.io/)):
 
     ```shell
-    tb deploy
-
-    // or you can set pm2 server name, default: TB
-    tb deploy --name <the name you set>
+    pm2 start npm --name 'project-name' -- start
     ```
 
 Then TB is listen to port `2333` in your server with [pm2](https://pm2.keymetrics.io/).
+
+## Themes
+
+you can run `tb theme` to check official themes(coming soon).
 
 ## Contributing
 

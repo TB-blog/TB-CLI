@@ -1,26 +1,48 @@
 {
   "name": "tb-cli",
   "version": "0.0.8",
-  "description": "A easy & simple cli for TB blog platform",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint --ext .js --ext bin/ command/",
-    "lint-fix": "eslint --fix --ext .js --ext bin/ command/"
+  "description": "A simple CLI for scaffolding TB.",
+  "bin": {
+    "tb": "bin/tb.js",
+    "tb-init": "bin/tb-init",
+    "tb-theme": "bin/tb-theme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TB-blog/TB-CLI.git"
   },
   "keywords": [
-    "blog",
-    "CLI",
-    "platform"
+    "tb",
+    "cli",
+    "ssr",
+    "vue",
+    "blog"
   ],
-  "bin": {
-    "tb": "bin/index.js"
-  },
   "author": "Trevor <xizhouh@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TB-blog/TB-CLI/issues"
+  },
+  "homepage": "https://github.com/TB-blog/TB-CLI#readme",
+  "scripts": {
+    "test": "npm run lint && npm run e2e",
+    "lint": "eslint test/e2e/test*.js lib bin/*",
+    "lint-fix": "eslint --fix test/e2e/test*.js lib bin/*",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint-fix"
+  ],
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
     "inquirer": "^5.2.0",
     "ora": "^2.1.0",
+    "request": "^2.85.0",
+    "rimraf": "^2.6.2",
+    "semver": "^5.5.0",
     "shelljs": "^0.8.2"
   },
   "devDependencies": {
@@ -30,18 +52,18 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "pre-commit": "^1.2.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TB-blog/TB-CLI.git"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }

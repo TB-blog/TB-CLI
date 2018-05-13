@@ -28,26 +28,27 @@ npm install tb-cli -g
 ### 使用
 
 ```shell
-  Usage: tb [options] [command]
+  Usage: tb <command> [options]
 
   Options:
 
-    -V, --version       output the version number
-    -h, --help          output usage information
+    -V, --version  output the version number
+    -h, --help     output usage information
 
   Commands:
 
-    init|i              generate TB blog platform
-    run|r               runing TB blog platform
-    deploy|d [options]  build & starting TB blog platform
+    init           generate a new project from TB template
+    theme          list available official themes
+    help [cmd]     display help for [cmd]
 ```
 ## 快速开始
 
 ```shell
 // 配置详情请见下方
-tb init
-cd TB/
-tb run
+tb init [project-name]
+cd [project-name]
+npm install // if using yarn: yarn
+npm run dev
 ```
 然后打开浏览器地址栏输入 http://127.0.0.1:2333 并访问。
 
@@ -75,11 +76,11 @@ TB 基于 `Github API` 和 `Github issues`。在你开始之前，请 [创建一
 
 TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多配置详情请点击[这里](https://github.com/gitalk/gitalk)。
 
-**注意:** *如果你不需要评论模块，请在生成时选择 `Use comment component? No`。*
+**注意:** *如果你不需要评论模块，请在生成时选择 `Use comments module? No`。*
 
 ## 部署
 
-如果你已经进入到服务器中，可以很简单的打包并运行 TB，但是在打包运行之前，请确保服务器中已经安装 [node](https://nodejs.org/)，[git](https://git-scm.com/) 和 [pm2](https://pm2.keymetrics.io/)。
+如果你已经进入到服务器中，可以很简单的打包并运行 TB，但是在打包运行之前，请确保服务器中已经安装 [node](https://nodejs.org/) 和 [git](https://git-scm.com/)。
 
 * 全局安装 [TB-CLI](https://github.com/TB-blog/TB-CLI)。
 
@@ -91,25 +92,27 @@ TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多�
 * 生成 TB，就像在本地环境一样:
 
     ```shell
-    tb init
+    tb init [project-name]
     ```
 
-* 进入 TB 文件夹:
+* 进入项目文件夹:
 
     ```shell
-    cd TB/
+    cd [project-name]
+    npm install --production // 如果使用 yarn: yarn install --production
     ```
 
-* 开始部署运行:
+* 开始部署运行（在这里使用 [pm2](https://pm2.keymetrics.io/)）:
 
     ```shell
-    tb deploy
-
-    // 你也可以设置 pm2 服务名称，默认为 TB
-    tb deploy --name <你设定的名称>
+    pm2 start npm --name 'project-name' -- start
     ```
 
 TB 将会监听在 `2333` 端口，配合 [pm2](https://pm2.keymetrics.io/) 持续稳定运行。
+
+## 主题
+
+你可以使用 `tb theme` 来查看最新官方主题（即将到来）。
 
 ## 贡献
 
