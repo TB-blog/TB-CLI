@@ -72,38 +72,6 @@ TB 基于 `Github API` 和 `Github issues`。在你开始之前，请 [创建一
 
 然后添加 token 描述并点击 `Generate token` 来获取你的个人 token。
 
-### 评论模块
-
-**注意:** *如果你不需要评论模块，请在生成时选择 `Use comments module? No`。*
-
-#### 使用
-
-需要 **GitHub Application**，如果没有 [点击这里申请](https://github.com/settings/applications/new)，`Authorization callback URL` 填写当前使用插件页面的域名。
-
-#### 设置
-
-- **clientID** `String`
-
-  **必须**. GitHub Application Client ID.
-
-- **clientSecret** `String`
-
-  **必须**. GitHub Application Client Secret.
-
-- **repo** `String`
-
-  **必须**. GitHub repository.
-
-- **owner** `String`
-
-  **必须**. GitHub repository 所有者，可以是个人或者组织。
-
-- **admin** `Array`
-
-  **必须**. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
-
-*TB 的评论模块使用了 [gitalk](https://github.com/gitalk/gitalk)。更多配置详情请点击[这里](https://github.com/gitalk/gitalk)。*
-
 ## 部署
 
 如果你已经进入到服务器中，可以很简单的打包并运行 TB，但是在打包运行之前，请确保服务器中已经安装 [node](https://nodejs.org/) 和 [git](https://git-scm.com/)。
@@ -138,7 +106,7 @@ TB 将会监听在 `2333` 端口，配合 [pm2](https://pm2.keymetrics.io/) 持�
 
 ## 主题
 
-你可以使用 `tb theme` 来查看最新官方主题（即将到来）。
+你可以使用 `tb theme` 来查看最新官方主题。
 
 ## 贡献
 
