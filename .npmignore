@@ -9,8 +9,6 @@
 # production
 /build
 /.build
-/dist
-dist
 
 # misc
 .DS_Store
@@ -26,5 +24,4 @@ yarn-error.log*
 build
 .justconf
 
-yarn.lock
-.yarnclean
+innerConfig
