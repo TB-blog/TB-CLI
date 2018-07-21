@@ -25,9 +25,12 @@
   },
   "homepage": "https://github.com/TB-blog/TB-CLI#readme",
   "scripts": {
-    "test": "npm run lint && npm run e2e",
-    "lint": "eslint test/e2e/test*.js lib bin/*",
-    "lint-fix": "eslint --fix test/e2e/test*.js lib bin/*",
+    "test": "npm run lint && jest --cache --silent",
+    "cov": "npm run lint && jest --coverage --cache --silent",
+    "codecov": "cat ./coverage/lcov.info | codecov",
+    "ci": "npm run lint && npm run cov",
+    "lint": "eslint __test__/**/*.js lib bin/* jest.*.js",
+    "lint-fix": "eslint --fix __test__/**/*.js lib bin/* jest.*.js",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
   "pre-commit": [
@@ -46,13 +49,17 @@
     "shelljs": "^0.8.2"
   },
   "devDependencies": {
+    "codecov.io": "^0.1.6",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-mocha": "^5.1.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
+    "jest": "^21.2.1",
     "pre-commit": "^1.2.2"
   },
   "publishConfig": {

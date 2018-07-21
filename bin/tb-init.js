@@ -15,14 +15,12 @@ const checkVersion = require('../lib/check-version');
 /**
  * Usage.
  */
-
 program
   .usage('[project-name]');
 
 /**
  * Help.
  */
-
 program.on('--help', () => {
   console.log();
   console.log('  Example:');
@@ -35,7 +33,6 @@ program.on('--help', () => {
 /**
  * Help.
  */
-
 function help () {
   program.parse(process.argv);
   if (program.args.length < 1) {
@@ -47,7 +44,6 @@ help();
 /**
  * Settings.
  */
-
 let rawName = program.args[0];
 const template = 'TB-blog/TB';
 const inPlace = !rawName || rawName === '.';
@@ -56,7 +52,6 @@ const to = path.resolve(rawName || '.');
 /**
  * Padding.
  */
-
 console.log();
 process.on('exit', () => {
   console.log();
@@ -74,6 +69,7 @@ if (inPlace || exists(to)) {
       run();
     } else {
       logger.info(rawName, true);
+      process.exit(0);
     }
   }).catch(logger.fatal);
 } else {
@@ -83,7 +79,6 @@ if (inPlace || exists(to)) {
 /**
  * Check, download and generate the project.
  */
-
 function run () {
   checkVersion(() => {
     downloadAndGenerate(template);
@@ -95,7 +90,6 @@ function run () {
  *
  * @param {String} template
  */
-
 function downloadAndGenerate (template) {
   const spinner = ora('downloading template...');
   spinner.start();
@@ -114,6 +108,7 @@ function downloadAndGenerate (template) {
         logger.fatal(err);
       }
       logger.info(rawName, false);
+      process.exit(0);
     });
   });
 }

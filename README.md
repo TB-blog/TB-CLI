@@ -1,5 +1,7 @@
-# TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)
+# TB-CLI [![npm package](https://img.shields.io/npm/v/tb-cli.svg)](https://www.npmjs.com/package/tb-cli)[![Build Status](https://travis-ci.org/TB-blog/TB-CLI.svg?branch=master)](https://travis-ci.org/TB-blog/TB-CLI)[![codecov](https://codecov.io/gh/TB-blog/TB-CLI/branch/master/graph/badge.svg)](https://codecov.io/gh/TB-blog/TB-CLI)
+
 [![NPM](https://nodei.co/npm/tb-cli.png?downloads=true&stars=true)](https://nodei.co/npm/tb-cli)
+
 
 A simple CLI for scaffolding TB.
 
