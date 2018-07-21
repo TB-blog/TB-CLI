@@ -1,6 +1,6 @@
 {
   "name": "tb-cli",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A simple CLI for scaffolding TB.",
   "bin": {
     "tb": "bin/tb.js",
